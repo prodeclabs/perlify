@@ -10,13 +10,13 @@ function SubmitButton() {
   return (
     <button 
       disabled={pending}
-      className="relative w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 group active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+      className="relative w-[30%] sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 group active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
       type="submit"
     >
       <div className="absolute inset-0 bg-[#238636] rounded-lg transition-all duration-300 group-hover:bg-[#2ea043] group-active:bg-[#2ea043]"></div>
       <div className="absolute inset-0 rounded-lg bg-white/[0.075] opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute -inset-1 rounded-lg bg-[#238636]/20 blur opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></div>
-      <span className="relative z-10 text-white text-sm sm:text-base">
+      <span className="relative z-10 text-white text-xs sm:text-base">
         {pending ? 'Joining...' : 'Notify Me'}
       </span>
     </button>
@@ -44,7 +44,7 @@ export function WaitlistForm() {
     <div className="w-full max-w-md space-y-3 sm:space-y-4 mt-6 sm:mt-8 px-4 sm:px-0">
       <h2 className="text-lg sm:text-2xl font-semibold text-white">Get Notified When We Launch</h2>
       <form ref={formRef} action={handleSubmit} className="space-y-2">
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+        <div className="flex flex-row sm:flex-row gap-2 sm:gap-3">
           <input
             type="email"
             name="email"
