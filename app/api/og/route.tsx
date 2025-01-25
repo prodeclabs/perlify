@@ -13,45 +13,81 @@ export async function GET() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#0a0a0a',
-          padding: '40px 80px',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #171717 100%)',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        {/* Logo */}
+        {/* Enhanced Gradient Orbs */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: 40,
+            position: 'absolute',
+            top: '-120px',
+            right: '-120px',
+            width: '600px',
+            height: '600px',
+            background: 'radial-gradient(circle, rgba(35, 134, 54, 0.3) 0%, rgba(35, 134, 54, 0.1) 40%, transparent 70%)',
+            borderRadius: '50%',
+            filter: 'blur(80px)',
+            transform: 'rotate(-10deg)',
           }}
-        >
-          {/* Add your logo SVG here */}
-        </div>
+        />
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-150px',
+            left: '-150px',
+            width: '800px',
+            height: '800px',
+            background: 'radial-gradient(circle, rgba(46, 160, 67, 0.25) 0%, rgba(46, 160, 67, 0.08) 45%, transparent 70%)',
+            borderRadius: '50%',
+            filter: 'blur(90px)',
+            transform: 'rotate(15deg)',
+          }}
+        />
         
+        {/* Additional ambient glow */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '1000px',
+            height: '1000px',
+            transform: 'translate(-50%, -50%)',
+            background: 'radial-gradient(circle, rgba(35, 134, 54, 0.05) 0%, transparent 60%)',
+            filter: 'blur(100px)',
+          }}
+        />
+        
+        {/* Content with enhanced styling */}
         <div
           style={{
             display: 'flex',
-            fontSize: 60,
-            fontStyle: 'normal',
-            color: '#fff',
-            marginBottom: 20,
-            lineHeight: 1.2,
-            whiteSpace: 'pre-wrap',
-            textAlign: 'center',
+            fontSize: 140,
+            fontWeight: 800,
+            color: '#ffffff',
+            marginBottom: 30,
+            fontFamily: 'Inter',
+            textShadow: '0 2px 10px rgba(0,0,0,0.2)',
+            position: 'relative',
+            zIndex: 10,
           }}
         >
-          Perlify<span style={{ color: '#238636' }}>.</span>
+          Perlify<span style={{ color: '#2ea043', textShadow: '0 0 20px rgba(46, 160, 67, 0.4)' }}>.</span>
         </div>
         
         <div
           style={{
             display: 'flex',
             fontSize: 30,
+            color: '#9ca3af',
             textAlign: 'center',
-            color: '#888',
-            marginTop: 20,
+            maxWidth: '600px',
             lineHeight: 1.4,
+            position: 'relative',
+            zIndex: 10,
+            textShadow: '0 2px 8px rgba(0,0,0,0.1)',
           }}
         >
           Your fun and insightful window into the world of open source

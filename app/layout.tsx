@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Your fun and insightful window into the world of open source. Discover repository analytics like never before.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/api/og',
         width: 1200,
         height: 630,
         alt: 'Perlify - Open Source Analytics Platform',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     creator: '@perlifyapp',
     title: 'Perlify - Open Source Analytics Platform',
     description: 'Your fun and insightful window into the world of open source. Discover repository analytics like never before.',
-    images: ['/og-image.png'],
+    images: ['/api/og'],
   },
   robots: {
     index: true,
