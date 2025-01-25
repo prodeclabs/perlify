@@ -64,30 +64,57 @@ export async function GET() {
         <div
           style={{
             display: 'flex',
-            fontSize: 140,
-            fontWeight: 800,
-            color: '#ffffff',
-            marginBottom: 30,
-            fontFamily: 'Inter',
-            textShadow: '0 2px 10px rgba(0,0,0,0.2)',
+            alignItems: 'flex-end',
+            gap: '16px',
+            marginBottom: 40,
             position: 'relative',
             zIndex: 10,
           }}
         >
-          Perlify<span style={{ color: '#2ea043', textShadow: '0 0 20px rgba(46, 160, 67, 0.4)' }}>.</span>
+          <div
+            style={{
+              fontSize: 70,
+              fontWeight: 500,
+              color: '#ffffff',
+              fontFamily: 'Inter',
+            //   textShadow: '0 2px 10px rgba(0,0,0,0.2)',
+              letterSpacing: '-0.02em',
+              lineHeight: 1,
+            }}
+          >
+            Perlify
+          </div>
+          <div
+            style={{
+              padding: '4px 12px',
+              fontSize: '16px',
+              fontWeight: 500,
+              color: 'rgba(255, 255, 255, 0.8)',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '20px',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              backdropFilter: 'blur(8px)',
+              letterSpacing: '0.05em',
+              marginLeft: '4px',
+              marginBottom: '6px',
+            }}
+          >
+            beta
+          </div>
         </div>
         
         <div
           style={{
             display: 'flex',
-            fontSize: 30,
+            fontSize: 28,
             color: '#9ca3af',
             textAlign: 'center',
-            maxWidth: '600px',
+            maxWidth: '550px',
             lineHeight: 1.4,
             position: 'relative',
             zIndex: 10,
             textShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            letterSpacing: '-0.01em',
           }}
         >
           Your fun and insightful window into the world of open source
