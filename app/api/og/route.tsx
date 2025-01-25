@@ -77,7 +77,7 @@ export async function GET() {
               fontWeight: 500,
               color: '#ffffff',
               fontFamily: 'Inter',
-            //   textShadow: '0 2px 10px rgba(0,0,0,0.2)',
+              textShadow: '0 2px 10px rgba(0,0,0,0.2)',
               letterSpacing: '-0.02em',
               lineHeight: 1,
             }}
