@@ -3,23 +3,21 @@
 import { useFormStatus } from 'react-dom'
 import { useRef, useState } from 'react'
 import { subscribeToWaitlist } from '@/actions/subscribeToWaitlist'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 function SubmitButton() {
   const { pending } = useFormStatus()
   
   return (
-    <button 
+    <Button 
       disabled={pending}
-      className="relative w-[30%] sm:w-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 group active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+      className="relative w-[30%] sm:w-auto"
       type="submit"
+      variant="default"
     >
-      <div className="absolute inset-0 bg-[#238636] rounded-lg transition-all duration-300 group-hover:bg-[#2ea043] group-active:bg-[#2ea043]"></div>
-      <div className="absolute inset-0 rounded-lg bg-white/[0.075] opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute -inset-1 rounded-lg bg-[#238636]/20 blur opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></div>
-      <span className="relative z-10 text-white text-xs sm:text-base">
-        {pending ? 'Joining...' : 'Notify Me'}
-      </span>
-    </button>
+      {pending ? 'Joining...' : 'Notify Me'}
+    </Button>
   )
 }
 
@@ -45,19 +43,15 @@ export function WaitlistForm() {
       <h2 className="text-lg sm:text-2xl font-semibold text-white">Get Notified When We Launch</h2>
       <form ref={formRef} action={handleSubmit} className="space-y-2">
         <div className="flex flex-row sm:flex-row gap-2 sm:gap-3">
-          <input
+          <Input
             type="email"
             name="email"
             required
             placeholder="Enter your email"
-            className="w-full flex-1 px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-[#161b22] border border-[#30363d] text-white placeholder-[#8b949e] 
-              transition-all duration-300
-              focus:outline-none 
-              focus:ring-2 
-              focus:ring-[#238636]/20 
-              focus:border-[#238636]
-              focus:bg-[#1c2129]
-              text-sm sm:text-base"
+            className="flex-1 bg-neutral-900 border-neutral-700 text-neutral-100 placeholder-neutral-500 
+              focus-visible:ring-[#238636]/20 
+              focus-visible:border-[#238636]
+              focus-visible:bg-neutral-800"
           />
           <SubmitButton />
         </div>

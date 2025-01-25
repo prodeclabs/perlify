@@ -1,9 +1,10 @@
 import Github from "./Github";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0d1117] text-[#c9d1d9] overflow-hidden">
+    <div className="min-h-screen bg-neutral-950 text-neutral-200 overflow-hidden">
       {/* Gradient Orbs - Adjusted for mobile */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -right-20 w-72 sm:w-96 h-72 sm:h-96 bg-[#238636]/10 rounded-full blur-3xl"></div>
@@ -15,7 +16,7 @@ export default function Home() {
           {/* Logo and Title Section */}
           <div className="space-y-3 sm:space-y-6">
             <div className="relative group cursor-pointer inline-block">
-              <div className="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center bg-[#161b22]/80 rounded-lg sm:rounded-xl border border-[#30363d]/30 shadow-lg transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl overflow-hidden">
+              <div className="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center bg-neutral-900/80 rounded-lg sm:rounded-xl border border-neutral-700/30 shadow-lg transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl overflow-hidden">
                 {/* Radial gradient background */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#238636]/10 via-transparent to-transparent"></div>
                 {/* Glass effect overlay */}
@@ -28,10 +29,10 @@ export default function Home() {
               <div className="absolute -inset-2 bg-gradient-to-r from-[#238636] to-[#2ea043] rounded-xl blur-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </div>
 
-            <h1 className="text-4xl sm:text-7xl font-bold text-white tracking-tight">
+            <h1 className="text-4xl sm:text-7xl font-bold text-neutral-100 tracking-tight">
               Perlify<span className="text-[#238636]">.</span>
             </h1>
-            <p className="text-base sm:text-xl text-[#8b949e] max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+            <p className="text-base sm:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
               Your fun and insightful window into the world of open source.
               Discover repository analytics like never before.
             </p>
@@ -44,74 +45,105 @@ export default function Home() {
 
           {/* Feature Cards */}
           <div className="w-full px-4 sm:px-0">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-[640px] lg:max-w-none mx-auto">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4 max-w-[640px] lg:max-w-none mx-auto">
               {[
                 {
-                  title: "Code Analytics",
-                  description:
-                    "Deep insights into repository metrics and patterns",
+                  title: {
+                    mobile: "Analytics",
+                    default: "Code Analytics"
+                  },
+                  description: {
+                    mobile: "Deep insights into your repos",
+                    default: "Deep insights into repository metrics and patterns"
+                  },
                   icon: (
-                    <img 
+                    <Image 
                       src="/icons/analytics.svg"
                       alt="Analytics Icon"
-                      className="w-4 h-4 sm:w-6 sm:h-6 mb-4 text-[#ffffff]"
+                      width={24}
+                      height={24}
+                      className="w-4 h-4 sm:w-6 sm:h-6 mb-2 sm:mb-4"
                     />
                   ),
                 },
                 {
-                  title: "Contributor Stories",
-                  description:
-                    "Meet the most talkative and active contributors",
+                  title: {
+                    mobile: "Community",
+                    default: "Contributor Stories"
+                  },
+                  description: {
+                    mobile: "Meet active contributors",
+                    default: "Meet the most talkative and active contributors"
+                  },
                   icon: (
-                    <img 
+                    <Image 
                       src="/icons/contributors.svg"
                       alt="Contributors Icon"
-                      className="w-4 h-4 sm:w-6 sm:h-6 mb-4 text-[#ffffff]"
+                      width={24}
+                      height={24}
+                      className="w-4 h-4 sm:w-6 sm:h-6 mb-2 sm:mb-4"
                     />
                   ),
                 },
                 {
-                  title: "Repo Comparisons",
-                  description: "Compare multiple repositories side by side",
+                  title: {
+                    mobile: "Compare",
+                    default: "Repo Comparisons"
+                  },
+                  description: {
+                    mobile: "Compare repositories",
+                    default: "Compare multiple repositories side by side"
+                  },
                   icon: (
-                    <img 
+                    <Image 
                       src="/icons/comparison.svg"
                       alt="Comparison Icon"
-                      className="w-4 h-4 sm:w-6 sm:h-6 mb-4 text-[#ffffff]"
+                      width={24}
+                      height={24}
+                      className="w-4 h-4 sm:w-6 sm:h-6 mb-2 sm:mb-4"
                     />
                   ),
                 },
                 {
-                  title: "Activity Insights",
-                  description:
-                    "Track engagement and development trends over time",
+                  title: {
+                    mobile: "Activity",
+                    default: "Activity Insights"
+                  },
+                  description: {
+                    mobile: "Track repo trends",
+                    default: "Track engagement and development trends over time"
+                  },
                   icon: (
-                    <img 
+                    <Image 
                       src="/icons/activity.svg"
                       alt="Activity Icon"
-                      className="w-4 h-4 sm:w-6 sm:h-6 mb-4 text-[#ffffff]"
+                      width={24}
+                      height={24}
+                      className="w-4 h-4 sm:w-6 sm:h-6 mb-2 sm:mb-4"
                     />
                   ),
                 },
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="group relative p-6 rounded-2xl bg-gradient-to-b from-[#161b22] to-[#1c2129] border border-[#30363d] transition-all duration-500 hover:shadow-2xl hover:shadow-[#238636]/10 hover:-translate-y-1 hover:border-[#238636]/50"
+                  className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-b from-neutral-900 to-neutral-900/90 border border-neutral-700 transition-all duration-500 hover:shadow-2xl hover:shadow-[#238636]/10 hover:border-[#238636]/50 flex flex-col h-full"
                 >
                   {/* Animated gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#238636]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#238636]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"></div>
 
                   {/* Glass effect */}
-                  <div className="absolute inset-0 backdrop-blur-[2px] bg-white/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  <div className="absolute inset-0 backdrop-blur-[2px] bg-white/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl"></div>
 
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col">
-                    {feature.icon}
-                    <h3 className="text-sm sm:text-xl font-semibold mb-2 text-white  transition-colors duration-300">
-                      {feature.title}
+                    <div className="flex justify-center">{feature.icon}</div>
+                    <h3 className="text-sm sm:text-xl font-semibold mb-1 sm:mb-2 text-neutral-100 transition-colors duration-300 text-center whitespace-nowrap">
+                      <span className="sm:hidden">{feature.title.mobile}</span>
+                      <span className="hidden sm:block">{feature.title.default}</span>
                     </h3>
-                    <p className="text-xs sm:text-base text-[#8b949e] group-hover:text-[#a3aab3] transition-colors duration-300 flex-grow">
-                      {feature.description}
+                    <p className="text-xs sm:text-base text-neutral-400 group-hover:text-neutral-300 transition-colors duration-300 text-center leading-tight">
+                      <span className="sm:hidden">{feature.description.mobile}</span>
+                      <span className="hidden sm:block">{feature.description.default}</span>
                     </p>
                   </div>
                 </div>
@@ -125,7 +157,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-[10px] sm:text-sm text-[#8b949e] px-3 sm:px-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-[10px] sm:text-sm text-neutral-400 px-3 sm:px-4">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-[#238636]"></div>
               Coming Soon
